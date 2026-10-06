@@ -20,22 +20,23 @@ This repository is the home for public builds, release notes, setup instructions
 
 ## Downloads and status
 
-**[Download v0.1.1-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.1.1-alpha.1)** — the current alpha prerelease for Windows x64.
+**[Download v0.2.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.2.0-alpha.1)** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.1.1-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.2.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
 ## What the mod can do
 
 - **Explore with friends.** See each other's movement, animations, aiming, weapons, and flashlights. Find teammates through overhead names, map markers, and health bars.
-- **Ride together.** Each player's motorcycle is visible, including its equipped parts, riding animations, lights, engine audio, and nitro effects. Parked bikes remain visible after dismounting.
+- **Ride together.** Each player's motorcycle is visible, including its equipped parts, paint, finishes, tank decals, riding animations, lights, engine audio, and nitro effects. Parked bikes remain visible after dismounting.
 - **Fight in a shared world.** Replication covers supported freakers, hordes, wildlife, and human NPCs, with guest attacks sent to the host's combat simulation. Gunfire, throwables, explosives, traps, and fire have synchronization support.
 - **Help your teammates.** Use a bandage or medkit on a nearby injured player, or revive a downed teammate through the game's interaction prompts.
 - **Share the environment.** Time of day and weather follow the host. Camp gates, searchable containers, and supported world sounds also synchronize.
+- **Interact with more of the world.** Experimental synchronization covers supported doors, generators, fuse panels, pushable vehicles, ladders, and other mechanisms. Native gameplay behavior across every supported mechanism still needs testing.
 - **Progress through common activities.** Experimental progression shares objectives for missions, side jobs, and encounters available to the participating players. Each player keeps their own campaign and inventory; see [Saves and current limits](#saves-and-current-limits).
 - **Choose how to connect.** Direct IP supports LAN, same-PC sessions, and reachable internet hosts. The experimental Steam integration adds friends-only lobbies, joining directly from the friends list, join codes, and relay networking.
-- **Try an optional first-person view.** Press **F10** to toggle it. Riding in first person is a separate option in the F9 menu.
+- **Choose your appearance and view.** Select a character model in the F9 menu or press **F10** for the optional first-person camera. Riding in first person is a separate option. Each client remembers its character and camera preferences.
 
 ## Requirements
 
@@ -50,7 +51,7 @@ The download contains the launcher and mod, not Days Gone. No developer tools, m
 ## Setup
 
 1. Close Days Gone. Back up the saves you intend to use: experimental progression can advance objectives and write checkpoints in each player's own campaign. The ordinary game's save data is under `%LOCALAPPDATA%\BendGame\Saved`.
-2. Extract the entire release ZIP, then open the extracted **DaysGoneMP** folder. Keep **DaysGoneMPLauncher.exe**, **DaysGoneMP.dll**, and the **steam** folder together. Run the extracted files, not the files inside the ZIP.
+2. Extract the entire release ZIP, then open the extracted **DaysGoneMP** folder. Keep **DaysGoneMPLauncher.exe**, **DaysGoneMP.dll**, **launcher_update.ps1**, and the **steam** folder together. Run the extracted files, not the files inside the ZIP.
 3. Start Steam and sign in, then double-click **DaysGoneMPLauncher.exe**.
 4. Click **Play with Steam**. If the launcher cannot find the game, click **Game location...** and select `BendGame\Binaries\Win64\DaysGone.exe` inside your Days Gone installation.
 5. Keep the launcher open until it reports **mod enabled**. Load a save and enter gameplay.
@@ -102,7 +103,8 @@ The launcher can open more windows than one session can admit, subject to your P
 
 - **F9** opens or closes the mod menu. **Co-op → Show teammate health** controls the teammate health display.
 - **F9 → Character & diagnostics → Summon bike** brings your assigned bike three metres in front of you. Dismount and face open ground first; your bike must already be loaded in the current world.
-- **F10** toggles the experimental first-person camera. Under **F9 → Character & diagnostics**, enable **Enable First Person View for riding** to keep it on while riding; this starts off. Scripted cameras retain their normal view.
+- **F10** toggles the experimental first-person camera. Under **F9 → Character & diagnostics**, enable **Enable First Person View for riding** to keep it on while riding; it defaults to off until you enable it. Scripted cameras retain their normal view.
+- Your character model, first-person toggle, riding toggle, and first-person FOV are saved automatically for each client and restored next time you play. Choose **Story appearance** in the character selector to clear the model override.
 - To **heal**, approach an injured teammate on foot within 2.5 metres and with a clear line of sight. Hold the displayed bandage or medkit interaction for two seconds. It consumes one selected item from the healer's inventory.
 - To **revive**, approach a downed teammate and hold **REVIVE PLAYER** for ten seconds. A successful revive restores 10% maximum health without consuming an item. Players normally have a 60-second downed window; an active revive pauses that countdown. Releasing the button or moving out of reach cancels the hold.
 - **Opening the pause menu does not pause the world while connected.** Stay somewhere safe when using menus.
@@ -121,7 +123,9 @@ The first-person view uses the existing character animations, so some outfits, p
 
 ## Updating or playing without the mod
 
-To update, close every running Days Gone instance, extract the new release into a fresh folder, and launch from that folder. Update all players together and keep each release's launcher, DLL, and Steam companion together.
+The launcher checks GitHub for updates on startup; **Check for updates** checks again. When a newer release is available, choose **Update and restart** to download and verify the package, update the launcher, mod and Steam companion, and reopen the launcher. Saves and settings are preserved. Restart running games afterward to load the new mod, and update all players together. Alpha builds also receive newer prereleases.
+
+For older launchers without update buttons, close Days Gone, extract the new release into a fresh folder, and launch from that folder. Keep the entire package together, including `launcher_update.ps1` in releases that support automatic updates.
 
 To play without the mod, close the game and launch it normally from Steam. Closing the launcher alone leaves the running game and loaded mod active. The mod's extracted folder can be removed once the game is closed; save profiles and logs remain in their local application-data folders.
 

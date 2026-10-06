@@ -6,6 +6,8 @@ This repository contains public documentation and release metadata. Build the mo
 
 1. Set `VERSION` in the development checkout to the next release number and copy that number into this public repository's `VERSION`. For a patch release, increment the patch number while retaining alpha status, for example `0.1.0-alpha.1` to `0.1.1-alpha.1`. Increment the alpha number for another prerelease of the same patch, and use `beta`, `rc`, or a stable version when appropriate. Keep CMake's numeric project version in sync. Published versions identify fixed packages; never replace one with different binaries.
 
+   For a minor release, increment the minor number and reset the patch, for example `0.1.1-alpha.1` to `0.2.0-alpha.1`.
+
 2. Update `docs/PLAYER-GUIDE.md` and `docs/QUICKSTART.txt` in the development checkout, then copy `docs/PLAYER-GUIDE.md` to this repository's `README.md`. Build the package:
 
    ```powershell
