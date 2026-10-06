@@ -1,0 +1,12 @@
+# Build archives belong in GitHub Releases, not repository history.
+*.zip
+*.7z
+*.exe
+*.dll
+*.pdb
+*.lib
+*.obj
+*.dmp
+*.log
+/build/
+/.local/
