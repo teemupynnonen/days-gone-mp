@@ -20,9 +20,9 @@ This repository is the home for public builds, release notes, setup instructions
 
 ## Downloads and status
 
-**[Download v0.2.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.2.0-alpha.1)** — the current alpha prerelease for Windows x64.
+**[Download v0.2.1-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.2.1-alpha.1)** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.2.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.2.1-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
