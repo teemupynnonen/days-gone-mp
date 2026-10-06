@@ -20,9 +20,9 @@ This repository is the home for public builds, release notes, setup instructions
 
 ## Downloads and status
 
-**[Download v0.1.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.1.0-alpha.1)** — the first public prerelease for Windows x64.
+**[Download v0.1.1-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.1.1-alpha.1)** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.1.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. Each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.1.1-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
@@ -101,6 +101,7 @@ The launcher can open more windows than one session can admit, subject to your P
 ## During a session
 
 - **F9** opens or closes the mod menu. **Co-op → Show teammate health** controls the teammate health display.
+- **F9 → Character & diagnostics → Summon bike** brings your assigned bike three metres in front of you. Dismount and face open ground first; your bike must already be loaded in the current world.
 - **F10** toggles the experimental first-person camera. Under **F9 → Character & diagnostics**, enable **Enable First Person View for riding** to keep it on while riding; this starts off. Scripted cameras retain their normal view.
 - To **heal**, approach an injured teammate on foot within 2.5 metres and with a clear line of sight. Hold the displayed bandage or medkit interaction for two seconds. It consumes one selected item from the healer's inventory.
 - To **revive**, approach a downed teammate and hold **REVIVE PLAYER** for ten seconds. A successful revive restores 10% maximum health without consuming an item. Players normally have a 60-second downed window; an active revive pauses that countdown. Releasing the button or moving out of reach cancels the hold.
