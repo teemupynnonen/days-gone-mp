@@ -2,7 +2,17 @@
 
 # Days Gone MP
 
-An experimental co-op mod for **Days Gone on PC**, supporting **up to four players: one host and three guests**. Explore the world, ride your bikes, and fight together, with shared enemies, weather, and supported mission progress.
+An experimental co-op mod for **Days Gone on PC**, supporting **up to four players: one host and three guests**.
+
+**The ultimate goal is to let you play through Days Gone's entire story with your friends.**
+
+**This is very much a work in progress.** There are known issues with game behavior not working correctly for guests, and missions may not work or progress for guest players. These issues are being addressed over time.
+
+Development priorities, in order:
+
+1. **Stabilize the core co-op functionality** so the multiplayer foundation works reliably.
+2. **Work through the story mission by mission**, fixing guest behavior and progression along the way.
+3. **Polish the smaller details** that are annoying but do not block playing together.
 
 This repository is the home for public builds, release notes, setup instructions, and bug reports. **The mod's source code is not published here yet.**
 
@@ -24,7 +34,7 @@ The mod is in active development. Combat, world synchronization, and campaign pr
 - **Help your teammates.** Use a bandage or medkit on a nearby injured player, or revive a downed teammate through the game's interaction prompts.
 - **Share the environment.** Time of day and weather follow the host. Camp gates, searchable containers, and supported world sounds also synchronize.
 - **Progress through common activities.** Experimental progression shares objectives for missions, side jobs, and encounters available to the participating players. Each player keeps their own campaign and inventory; see [Saves and current limits](#saves-and-current-limits).
-- **Choose how to connect.** Direct IP supports LAN, same-PC sessions, and reachable internet hosts. The experimental Steam integration adds friends-only lobbies, invitations, join codes, and relay networking.
+- **Choose how to connect.** Direct IP supports LAN, same-PC sessions, and reachable internet hosts. The experimental Steam integration adds friends-only lobbies, joining directly from the friends list, join codes, and relay networking.
 - **Try an optional first-person view.** Press **F10** to toggle it. Riding in first person is a separate option in the F9 menu.
 
 ## Requirements
@@ -69,15 +79,14 @@ Enter an IPv4 address, not a hostname or IPv6 address. Direct IP does not use St
 
 ### Steam friends
 
-The current Steam integration uses **Spacewar (AppID 480)** as development infrastructure. Steam may display that name while the companion is running. Invitations and internet relay play are experimental; use the release notes to check their verification status.
+The current Steam integration uses **Spacewar (AppID 480)** as development infrastructure. Steam may display that name while the companion is running. Steam co-op and internet relay play are experimental; use the release notes to check their verification status.
 
 1. Everyone starts the mod, loads a save, and selects **F9 → Co-op → Steam**. Use separate Steam accounts and be friends with the host.
 2. The host clicks **Host co-op** and waits for **Session ready**.
-3. The host clicks **Invite** beside each friend, up to three guests.
-4. Guests click **Accept invite** in the Co-op menu. A compatible host may also appear with a **Join** button in the friends list.
-5. Alternatively, the host clicks **Copy code** and shares it. Guests paste it into the join-code field and click **Join with code**. A code still requires access to the friends-only lobby.
+3. Each guest finds the host in the **Friends online** list and clicks **Join** beside their name. Click **Refresh** if the host's session has not appeared yet. Up to three guests can join.
+4. Alternatively, the host clicks **Copy code** and shares it. Guests paste it into the join-code field and click **Join with code**. A code still requires access to the friends-only lobby.
 
-All players must have the mod running before accepting an invitation; an invite cannot launch the mod for them. Steam mode uses relay networking, so the Direct IP port-forwarding steps do not apply.
+All players must have the mod running and a save loaded before joining. Steam mode uses relay networking, so the Direct IP port-forwarding steps do not apply.
 
 ### Multiple windows on one PC
 
