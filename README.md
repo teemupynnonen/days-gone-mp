@@ -6,6 +6,8 @@ An experimental co-op mod for **Days Gone on PC**, supporting **up to four playe
 
 **The ultimate goal is to let you play through Days Gone's entire story with your friends.**
 
+**v0.5.0-alpha.1 is highly experimental due to extensive internal changes. Expect regressions and unexpected behavior, including in features that worked in earlier releases. Back up your saves before testing.**
+
 **This is very much a work in progress.** There are known issues with game behavior not working correctly for guests, and missions may not work or progress for guest players. These issues are being addressed over time.
 
 Development priorities, in order:
@@ -20,9 +22,9 @@ This repository is the home for public builds, release notes, setup instructions
 
 ## Downloads and status
 
-**[Download v0.4.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.4.0-alpha.1)** — the current alpha prerelease for Windows x64.
+**[Download v0.5.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.5.0-alpha.1)** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.4.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.5.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
@@ -106,12 +108,13 @@ The launcher can open more windows than one session can admit, subject to your P
 - **F9** opens or closes the mod menu. **Co-op → Show teammate health** controls the teammate health display.
 - **F9 → Character & diagnostics → Summon bike** brings your assigned bike three metres in front of you. Dismount and face open ground first; your bike must already be loaded in the current world.
 - **F10** toggles the experimental first-person camera. Under **F9 → Character & diagnostics**, enable **Enable First Person View for riding** to keep it on while riding; it defaults to off until you enable it. Scripted cameras retain their normal view.
+- **F8** toggles noclip while on foot: fly freely with **WASD** and the mouse, **Space**/**Ctrl** to rise or descend and **Shift** to go faster. Your character stays put until you press **F8** again, then teleports to where you flew. If that spot is blocked, keep flying to open space and try again.
 - Your character model, first-person toggle, riding toggle, and first-person FOV are saved automatically for each client and restored next time you play. Choose **Story appearance** in the character selector to clear the model override.
 - To **heal**, approach an injured teammate on foot within 2.5 metres and with a clear line of sight. Hold the displayed bandage or medkit interaction for two seconds. It consumes one selected item from the healer's inventory.
 - To **revive**, approach a downed teammate and hold **REVIVE PLAYER** for ten seconds. A successful revive restores 10% maximum health without consuming an item. Players normally have a 60-second downed window; an active revive pauses that countdown. Releasing the button or moving out of reach cancels the hold.
 - **Opening the pause menu does not pause the world while connected.** Stay somewhere safe when using menus.
 - Established sessions retry after an unexpected connection loss. Use **Co-op → Cancel reconnect** to stop retrying.
-- Use **Co-op → Leave session** or **F8** to disconnect. A guest leaving frees a slot while the remaining players continue. The host leaving ends the session; host migration is not available.
+- Use **Co-op → Leave session** to disconnect. A guest leaving frees a slot while the remaining players continue. The host leaving ends the session; host migration is not available.
 
 ## Saves and current limits
 
