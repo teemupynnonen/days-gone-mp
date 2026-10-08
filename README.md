@@ -20,23 +20,25 @@ This repository is the home for public builds, release notes, setup instructions
 
 ## Downloads and status
 
-**[Download v0.3.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.3.0-alpha.1)** — the current alpha prerelease for Windows x64.
+**[Download v0.4.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.4.0-alpha.1)** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.3.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.4.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
 ## What the mod can do
 
 - **Explore with friends.** See each other's movement, animations, aiming, weapons, and flashlights. Find teammates through overhead names, map markers, and health bars.
-- **Ride together.** Each player's motorcycle is visible, including its equipped parts, paint, finishes, tank decals, riding animations, lights, engine audio, and nitro effects. Parked bikes remain visible after dismounting.
+- **Ride together.** Each player's motorcycle is visible, including its equipped parts, paint, finishes, tank decals, riding animations, lights, engine audio, and nitro effects. Parked bikes remain visible after dismounting. You can repair a teammate's parked bike with scrap or refuel it with a gas can using the native interaction prompts.
 - **Fight in a shared world.** Replication covers supported freakers, hordes, wildlife, and human NPCs, with guest attacks sent to the host's combat simulation. Gunfire, throwables, explosives, traps, and fire have synchronization support.
-- **Help your teammates.** Use a bandage or medkit on a nearby injured player, or revive a downed teammate through the game's interaction prompts.
+- **Help your teammates.** Use a bandage or medkit on a nearby injured player, or revive a downed teammate through the game's interaction prompts. Combat assists and successful teammate healing can award XP.
 - **Share the environment.** Time of day and weather follow the host. Camp gates, searchable containers, and supported world sounds also synchronize.
 - **Interact with more of the world.** Experimental synchronization covers supported doors, generators, fuse panels, pushable vehicles, ladders, and other mechanisms. Native gameplay behavior across every supported mechanism still needs testing.
 - **Progress through common activities.** Experimental progression shares objectives for missions, side jobs, and encounters available to the participating players. Each player keeps their own campaign and inventory; see [Saves and current limits](#saves-and-current-limits).
 - **Choose how to connect.** Direct IP supports LAN, same-PC sessions, and reachable internet hosts. The experimental Steam integration adds friends-only lobbies, joining directly from the friends list, join codes, and relay networking.
 - **Choose your appearance and view.** Select a character model in the F9 menu or press **F10** for the optional first-person camera. Riding in first person is a separate option. Each client remembers its character and camera preferences.
+
+If you get stuck, use **F9 → Character & diagnostics → Unstuck** to teleport beside a teammate in the same world.
 
 ## Requirements
 
