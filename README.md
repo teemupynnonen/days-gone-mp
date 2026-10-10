@@ -6,8 +6,6 @@ An experimental co-op mod for **Days Gone on PC**, supporting **up to four playe
 
 **The ultimate goal is to let you play through Days Gone's entire story with your friends.**
 
-**v0.5.0-alpha.1 is highly experimental due to extensive internal changes. Expect regressions and unexpected behavior, including in features that worked in earlier releases. Back up your saves before testing.**
-
 **This is very much a work in progress.** There are known issues with game behavior not working correctly for guests, and missions may not work or progress for guest players. These issues are being addressed over time.
 
 Development priorities, in order:
@@ -22,9 +20,9 @@ This repository is the home for public builds, release notes, setup instructions
 
 ## Downloads and status
 
-**[Download v0.5.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.5.0-alpha.1)** — the current alpha prerelease for Windows x64.
+**[Download v0.6.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.6.0-alpha.1)** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.5.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.6.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
@@ -32,6 +30,7 @@ The mod is in active development. Combat, world synchronization, and campaign pr
 
 - **Explore with friends.** See each other's movement, animations, aiming, weapons, and flashlights. Find teammates through overhead names, map markers, and health bars.
 - **Ride together.** Each player's motorcycle is visible, including its equipped parts, paint, finishes, tank decals, riding animations, lights, engine audio, and nitro effects. Parked bikes remain visible after dismounting. You can repair a teammate's parked bike with scrap or refuel it with a gas can using the native interaction prompts.
+- **Ride as a passenger.** Stand next to a teammate's stopped bike and hold the displayed **RIDE AS PASSENGER** interaction to climb on behind its rider, using the game's own passenger seat, animations and camera. Use the usual exit input to get off. Each bike has one passenger seat, and only its owner can drive it.
 - **Fight in a shared world.** Replication covers supported freakers, hordes, wildlife, and human NPCs, with guest attacks sent to the host's combat simulation. Gunfire, throwables, explosives, traps, and fire have synchronization support.
 - **Help your teammates.** Use a bandage or medkit on a nearby injured player, or revive a downed teammate through the game's interaction prompts. Combat assists and successful teammate healing can award XP.
 - **Share the environment.** Time of day and weather follow the host. Camp gates, searchable containers, and supported world sounds also synchronize.
@@ -106,12 +105,15 @@ The launcher can open more windows than one session can admit, subject to your P
 ## During a session
 
 - **F9** opens or closes the mod menu. **Co-op → Show teammate health** controls the teammate health display.
+- Under **F9 → Co-op**, **Show player overhead labels** toggles player names above teammates, and **Player label scale** adjusts their size from 0.5× to 2× (default: 1×).
 - **F9 → Character & diagnostics → Summon bike** brings your assigned bike three metres in front of you. Dismount and face open ground first; your bike must already be loaded in the current world.
 - **F10** toggles the experimental first-person camera. Under **F9 → Character & diagnostics**, enable **Enable First Person View for riding** to keep it on while riding; it defaults to off until you enable it. Scripted cameras retain their normal view.
 - **F8** toggles noclip while on foot: fly freely with **WASD** and the mouse, **Space**/**Ctrl** to rise or descend and **Shift** to go faster. Your character stays put until you press **F8** again, then teleports to where you flew. If that spot is blocked, keep flying to open space and try again.
-- Your character model, first-person toggle, riding toggle, and first-person FOV are saved automatically for each client and restored next time you play. Choose **Story appearance** in the character selector to clear the model override.
+- **F3** hides all UI, including the game HUD, player labels, teammate health and notifications, for clean screenshots and video. Press **F3** again to bring it back. Menus still open normally.
+- Your character model, first-person toggle, riding toggle, first-person FOV, and overhead label visibility and scale are saved automatically for each client and restored next time you play. Choose **Story appearance** in the character selector to clear the model override.
 - To **heal**, approach an injured teammate on foot within 2.5 metres and with a clear line of sight. Hold the displayed bandage or medkit interaction for two seconds. It consumes one selected item from the healer's inventory.
 - To **revive**, approach a downed teammate and hold **REVIVE PLAYER** for ten seconds. A successful revive restores 10% maximum health without consuming an item. Players normally have a 60-second downed window; an active revive pauses that countdown. Releasing the button or moving out of reach cancels the hold.
+- To **ride as a passenger**, stand within three metres of a teammate's stopped or parked bike and hold **RIDE AS PASSENGER** for one second. Its rider can be seated or away. If two players claim the same seat at once, one is set down again with a notification.
 - **Opening the pause menu does not pause the world while connected.** Stay somewhere safe when using menus.
 - Established sessions retry after an unexpected connection loss. Use **Co-op → Cancel reconnect** to stop retrying.
 - Use **Co-op → Leave session** to disconnect. A guest leaving frees a slot while the remaining players continue. The host leaving ends the session; host migration is not available.
@@ -122,7 +124,7 @@ Each player runs their own game and uses their own saves and inventory. Co-op do
 
 Progression sharing works per activity: eligible guests can catch up on objectives and checkpoints for content they have unlocked. Guests with missing prerequisites, already completed content, or progress ahead of the host can help without having their campaign rolled back. Locked story content is not imported. Some scripted interactions still need the host to perform them, and full campaign compatibility is not established.
 
-The host controls shared enemies and the environment. Stay near the host: supported enemies in a distant guest's area may be absent if the host has not loaded that area. Supported enemy families are replicated, but this is not complete synchronization of every NPC, script, or object in the game. Combat and AI targeting can still have rough edges. Each player controls their own bike; shared vehicle ownership and collision forces are not synchronized.
+The host controls shared enemies and the environment. Stay near the host: supported enemies in a distant guest's area may be absent if the host has not loaded that area. Supported enemy families are replicated, but this is not complete synchronization of every NPC, script, or object in the game. Combat and AI targeting can still have rough edges. Each player controls their own bike; passengers ride along but cannot drive, and shared vehicle ownership and collision forces are not synchronized.
 
 The first-person view uses the existing character animations, so some outfits, poses, and close walls can cause clipping. Other mods and unsupported game versions have not been validated with this mod.
 
