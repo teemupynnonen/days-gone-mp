@@ -16,13 +16,13 @@ Development priorities, in order:
 
 This repository is the home for public builds, release notes, setup instructions, and bug reports. **The mod's source code is not published here yet.**
 
-[Releases](https://github.com/teemupynnonen/days-gone-mp/releases) · [Setup](#setup) · [Play-together guide](#play-together) · [Report a bug](https://github.com/teemupynnonen/days-gone-mp/issues)
+[Setup](#setup) · [Play-together guide](#play-together) · [Bug reports](#bug-reports)
 
 ## Downloads and status
 
-**[Download v0.8.0-alpha.1](https://github.com/teemupynnonen/days-gone-mp/releases/tag/v0.8.0-alpha.1)** — the current alpha prerelease for Windows x64.
+**Download v0.9.0-alpha.1** — the current alpha prerelease for Windows x64.
 
-Download **`DaysGoneMP-0.8.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
+Download **`DaysGoneMP-0.9.0-alpha.1-windows-x64.zip`** from the release's **Assets** section. GitHub's automatically generated **Source code** archives contain this repository's documentation, not the playable mod. Check the release notes for features and known issues. The F9 menu shows your mod version, and each package includes `VERSION.txt`; its release also provides a SHA-256 checksum.
 
 The mod is in active development. Combat, world synchronization, and campaign progression remain experimental. Automated networking tests cover three- and four-player sessions; see the release notes for the checks performed on each published build. Automated coverage does not establish complete four-player gameplay or Steam internet compatibility.
 
@@ -150,8 +150,8 @@ Logs are under **`%LOCALAPPDATA%\DaysGoneMP`**. The launcher’s **Open logs** s
 
 ## Bug reports
 
-[Open an issue](https://github.com/teemupynnonen/days-gone-mp/issues/new) with the mod release, game build, connection method, player count, and whether you were the host or a guest. Include steps to reproduce, what you expected, what happened, and relevant log excerpts. Check logs for personal paths, account details, or network addresses before posting them publicly.
+Open an issue in this repository with the mod release, game build, connection method, player count, and whether you were the host or a guest. Include steps to reproduce, what you expected, what happened, and relevant log excerpts. Check logs for personal paths, account details, or network addresses before posting them publicly.
 
-For maintainers, [RELEASING.md](https://github.com/teemupynnonen/days-gone-mp/blob/main/RELEASING.md) describes how to publish a packaged build.
+For maintainers, `RELEASING.md` describes how to publish a packaged build.
 
 Days Gone MP is an unofficial community mod and is not affiliated with or endorsed by Bend Studio or Sony Interactive Entertainment.

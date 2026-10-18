@@ -26,16 +26,17 @@ This repository contains public documentation and release metadata. Build the mo
 4. Check the archive contents and test launching from a freshly extracted copy. The package should contain only the intended runtime files, guides, and notices. Read the packaged guides too: they must agree with this repository's setup instructions.
 5. Record the game build, mod version, features changed, known issues, and actual playtest coverage. Exercise a host with at least two guests. For admission or lifecycle changes, also check a full four-player session, rejection of a fifth player, and reuse of a departing guest's slot. Distinguish automated coverage from native gameplay and Steam internet tests.
 6. Describe the Steam integration shipped in the release. The first alpha uses Spacewar/AppID 480 as development infrastructure. Preserve the third-party notices included with the package.
-7. Update the public README's download link and asset filename, commit the documentation and `VERSION` in this repository, and push before creating the release tag.
+7. Update the public README's release version and asset filename, commit the documentation and `VERSION` in this repository, and push before creating the release tag.
 
 ## Create a draft release
 
 Use a versioned tag, such as `v0.1.0-alpha.1`, and mark experimental builds as prereleases. The tag in this repository identifies the public documentation and release; keep the exact development revision and build provenance in the development checkout.
 
-Create a release on [GitHub Releases](https://github.com/teemupynnonen/days-gone-mp/releases), or use the GitHub CLI from the development checkout. For example, after preparing release notes at `build\release-notes.md`:
+Create a release on GitHub Releases, or use the GitHub CLI from the development checkout. For example, after preparing release notes at `build\release-notes.md`:
 
 ```powershell
-gh release create v0.1.0-alpha.1 build/DaysGoneMP-0.1.0-alpha.1-windows-x64.zip build/DaysGoneMP-0.1.0-alpha.1-windows-x64.zip.sha256 --repo teemupynnonen/days-gone-mp --target main --draft --prerelease --title "Days Gone MP v0.1.0-alpha.1" --notes-file build/release-notes.md
+$repository = gh repo view --json nameWithOwner --jq .nameWithOwner
+gh release create v0.1.0-alpha.1 build/DaysGoneMP-0.1.0-alpha.1-windows-x64.zip build/DaysGoneMP-0.1.0-alpha.1-windows-x64.zip.sha256 --repo $repository --target main --draft --prerelease --title "Days Gone MP v0.1.0-alpha.1" --notes-file build/release-notes.md
 ```
 
 Include the following in the release notes:
@@ -44,7 +45,7 @@ Include the following in the release notes:
 - Changes since the previous release, or the initial feature set.
 - Known issues and any limitations that affect setup, saves, or multiplayer.
 - Which gameplay and connection scenarios were actually tested.
-- A link to the [setup guide](https://github.com/teemupynnonen/days-gone-mp#setup).
+- A reference to the Setup section in the repository README.
 
 Upload the versioned ZIP and its checksum under **Assets**. Binaries belong in release assets, not in Git commits. GitHub also adds source archives automatically; those contain only this public repository's files.
 
